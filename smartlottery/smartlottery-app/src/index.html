@@ -1,0 +1,100 @@
+<html>
+
+<head>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+<script src="app.js"></script>
+<!-- <style>
+body {
+    background-image: url('https://thumbs.dreamstime.com/b/golden-lottery-balls-stack-background-dept-field-effect-d-illustration-suitable-luck-succes-game-themes-103103148.jpg');
+    background-size: cover;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+</style> -->
+</head>
+<body>
+    <!-- <img  src="pic.png" alt="Paris" width="550" height="220"> -->
+    <nav class="navbar navbar-dark bg-dark" >
+        <a class="navbar-brand text-center" style="flex:auto;font-size: xxx-large;" href="#">
+          <b> Smart Lottery System</b>
+        </a>
+    <div class="row" >
+        <button class="btn btn-light m-3 p-3" onclick="func()">Owner</button>
+        <button class="btn btn-primary m-3 p-3" onclick="func2()">Player</button>
+    </div>
+    </nav>
+    <div class="row justify-content-md-center" >
+        <p id="decentralized_address" class="font-italic" style="margin-top: 60px;"> Your decentralized address : </p>
+    </div>
+    
+    <div class="row justify-content-md-center">
+        <p id="tok" class="font-italic" style="margin-top: 60px;"></p>
+    </div>
+    <div class="row justify-content-md-center">
+        <p id="win" class="font-italic" style="margin-top: 60px;"></p>
+    </div>
+    <div id= "ownerfun" style="display:none">
+        <div class="text-center">
+            <div>
+                <button class="btn btn-primary" onclick="startlottery()">Start Lottery</button><br /><br />
+                <button class="btn btn-primary" onclick="generatewinners()">Generate Winner</button><br /><br />
+                <button class="btn btn-primary" onclick="settlepayment()">Settle Payment</button><br /><br />
+                <button class="btn btn-primary" onclick="updateno()">change no of winners</button><br /><br />
+                <button class="btn btn-primary" onclick="regfun()">Register Player</button><br /><br />
+            </div>
+        </div>
+    </div>
+
+    <div id= "playerfun" style="display:none">
+        <div class="text-center">
+            <div>
+                <br><br><button class="btn btn-info" onclick="tickets()">Buy Tickets</button></a><br /><br />
+                <button class="btn btn-info"onclick="winners()">See Winners</button><br /><br />
+                <button class="btn btn-info" onclick="tokenadd()">See Token Address</button><br /><br />
+            </div>
+        </div>
+    </div>
+
+    <div id= "registerfun" style="display:none">
+        <div class="text-center">
+            <div>
+                Address:<input type="text" id="address" name="address" size="50"><br><br>
+                Tokens:<input type="text" id="tokens" name="tokens" size="50"><br><br>
+            <button onclick="registerplayer(document.getElementById('address').value,document.getElementById('tokens').value)" class="btn btn-secondary">Register</button>
+            </div>
+        </div>
+    </div>
+    <div id= "update" style="display:none">
+        <div class="text-center">
+            <div>
+                 No of winners:<input type="text" id="address" name="address" size="50"><br>
+                <button onclick="updatewinners(document.getElementById('address').value)" class="btn btn-secondary">Update</button>
+            </div>
+        </div>
+    </div>
+    <div id= "buytickets" style="display:none">
+        <div class="text-center">
+            <div>
+                 No.of.Tickets:<input type="text" id="tickets" name="tokens" size="50"><br> 
+            <button onclick="buyticks(document.getElementById('tickets').value)" class="btn btn-secondary">BUY</button>
+            </div>
+        </div>
+    </div>
+   
+    <div id= "startlot" style="display:none">
+        <div class="text-center">
+            <div>
+                Lotterytime : <input class="m=5" type="text" id="add" name="address" size="50"><br><br>
+                Gain : <input type="text" id="tokr" name="tokens" size="50"><br><br>
+            <button onclick="startlotteries(document.getElementById('add').value,document.getElementById('tokr').value)" class="btn btn-secondary">Start Lottery</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
